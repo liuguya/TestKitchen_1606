@@ -1,0 +1,27 @@
+[
+ {
+    "ctrlName":"CookbookViewController",
+    "titlrName":"",
+    "imageName":""
+ },
+ {
+ "ctrlName":"CommunityViewController",
+ "titlrName":"",
+ "imageName":""
+ },
+ {
+ "ctrlName":"MallViewController",
+ "titlrName":"",
+ "imageName":""
+ },
+ {
+ "ctrlName":"FoodClassViewController",
+ "titlrName":"",
+ "imageName":""
+ },
+ {
+ "ctrlName":"ProfileViewController",
+ "titlrName":"",
+ "imageName":""
+ }
+ ]
