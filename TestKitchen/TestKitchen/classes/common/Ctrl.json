@@ -1,27 +1,27 @@
 [
  {
     "ctrlName":"CookbookViewController",
-    "titlrName":"",
-    "imageName":""
+    "titlrName":"食材",
+    "imageName":"home"
  },
  {
  "ctrlName":"CommunityViewController",
- "titlrName":"",
- "imageName":""
+ "titlrName":"社区",
+ "imageName":"community"
  },
  {
  "ctrlName":"MallViewController",
- "titlrName":"",
- "imageName":""
+ "titlrName":"商城",
+ "imageName":"shop"
  },
  {
  "ctrlName":"FoodClassViewController",
- "titlrName":"",
- "imageName":""
+ "titlrName":"食课",
+ "imageName":"shike"
  },
  {
  "ctrlName":"ProfileViewController",
- "titlrName":"",
- "imageName":""
+ "titlrName":"我的",
+ "imageName":"mine"
  }
  ]

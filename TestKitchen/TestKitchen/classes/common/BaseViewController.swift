@@ -21,6 +21,35 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //导航标题
+    func addNavTitle(title:String?){
+        let titleLabel = UILabel.createLabel(title, font: UIFont.systemFontOfSize(24), textAlignment: .Center, textColor: UIColor.blackColor())
+        
+        navigationItem.titleView = titleLabel
+    }
+    
+    //导航按钮
+    func addNavBtn(imageName:String,target:AnyObject?,action:Selector,isLeft:Bool){
+        let  btn = UIButton.createButton(nil, bgImageName: imageName, selectBgImageName: nil, target: target, action: action)
+        btn.frame = CGRectMake(0, 4, 40, 36)
+        let  barItem = UIBarButtonItem(customView: btn)
+        if  isLeft {
+            navigationItem.leftBarButtonItem = barItem
+        }else{
+            navigationItem.rightBarButtonItem = barItem
+        }
+        
+        
+    }
+    
+    func addNavBackBtn(){
+        addNavBtn("", target: self, action: #selector(backAction), isLeft: true)
+    }
+    func backAction(){
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    
 
     /*
     // MARK: - Navigation
