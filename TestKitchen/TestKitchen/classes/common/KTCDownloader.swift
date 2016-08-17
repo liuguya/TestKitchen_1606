@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 protocol KTCDownloaderDelegate:NSObjectProtocol{
     func downloder(downloader:KTCDownloader , didFailWithError error:NSError)
-    func downloder(downloader:KTCDownloader , didFinishWithData data:NSData)
+    func downloder(downloader:KTCDownloader , didFinishWithData data:NSData?)
 }
 
 public enum KTCDownloaderType: Int {

@@ -9,14 +9,21 @@
 import UIKit
 
 class CookbookViewController: BaseViewController {
-
+    //食材首页的推荐视图
+    private var recommendView:CBRecommendView?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        createHomePageView()
         //导航
         createMyNav()
         self.downloadRecommentData()
     }
+    
+    
     
     //创建导航
     func createMyNav(){
@@ -25,6 +32,27 @@ class CookbookViewController: BaseViewController {
         //搜索
         addNavBtn("search", target: self, action: #selector(searchAction), isLeft: false)
     }
+    
+    //扫一扫
+    func scanAction(){}
+    
+    //搜索
+    func searchAction(){}
+    
+    //初始化视图
+    func createHomePageView(){
+        self.automaticallyAdjustsScrollViewInsets = false
+        recommendView = CBRecommendView()
+        view.addSubview(recommendView!)
+        recommendView?.snp_makeConstraints(closure: {
+            [weak self]
+            (make) in
+            make.edges.equalTo(self!.view).inset(UIEdgeInsetsMake(64, 0, 49, 0))
+        })
+        
+    }
+    
+    
     //下载数据
     func downloadRecommentData(){
         //methodName=SceneHome&token=&user_id=&version=4.5
@@ -36,11 +64,7 @@ class CookbookViewController: BaseViewController {
     }
     
     
-     //扫一扫
-    func scanAction(){}
     
-    //搜索
-    func searchAction(){}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -65,8 +89,15 @@ extension CookbookViewController:KTCDownloaderDelegate{
         print(error)
     }
     
-    func downloder(downloader: KTCDownloader, didFinishWithData data: NSData) {
-        let str = NSString(data: data, encoding: NSUTF8StringEncoding)
-        print(str!)
+    func downloder(downloader: KTCDownloader, didFinishWithData data: NSData?) {
+        if let jsonData = data {
+            let model = CBRecommendModel.parseModel(jsonData)
+            //显示数据
+            dispatch_async(dispatch_get_main_queue(), { 
+                [weak self] in
+                self!.recommendView?.model = model
+            })
+        }
+        
     }
 }
