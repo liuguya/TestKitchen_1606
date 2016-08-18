@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (3.4.1)
+  - Kingfisher (2.4.2)
+  - SnapKit (0.15.0)
+  - SwiftyJSON (2.3.2)
+  - XWSwiftRefresh (0.1.9)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.4)
+  - Kingfisher (~> 2.4)
+  - SnapKit (~> 0.15.0)
+  - SwiftyJSON
+  - XWSwiftRefresh (~> 0.1.9)
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Kingfisher: 05bf8d04408aaa70fcd2c8c81b9f1d0f1ad313dd
+  SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  XWSwiftRefresh: 1981ad8f7579da94c94a8e7720803f2579dcde46
+
+PODFILE CHECKSUM: 7e69611030567c1f3c0d3082fe06e7778004d169
+
+COCOAPODS: 1.0.1
