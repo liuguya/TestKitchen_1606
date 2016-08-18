@@ -31,7 +31,7 @@ class BaseViewController: UIViewController {
     //导航按钮
     func addNavBtn(imageName:String,target:AnyObject?,action:Selector,isLeft:Bool){
         let  btn = UIButton.createButton(nil, bgImageName: imageName, selectBgImageName: nil, target: target, action: action)
-        btn.frame = CGRectMake(0, 4, 40, 36)
+        btn.frame = CGRectMake(0, 4, 30, 30)
         let  barItem = UIBarButtonItem(customView: btn)
         if  isLeft {
             navigationItem.leftBarButtonItem = barItem

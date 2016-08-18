@@ -16,7 +16,7 @@ class CookbookViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        //初始化视图
         createHomePageView()
         //导航
         createMyNav()

@@ -20,6 +20,7 @@ class CBRecommendADCell: UITableViewCell {
     
     var bannerArray:Array<CBRecommendBannerModel>?{
         didSet{
+            self.scrollView.showsHorizontalScrollIndicator = false
             showData()
         }
     

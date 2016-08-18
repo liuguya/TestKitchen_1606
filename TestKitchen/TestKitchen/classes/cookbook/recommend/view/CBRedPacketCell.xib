@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="redPacketCellId" id="KGk-i7-Jjw" customClass="CBRedPacketCell" customModule="TestKitchen" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMD-g8-lSX" userLabel="scrollView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AMD-g8-lSX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="1Px-MB-55O"/>
+                    <constraint firstItem="AMD-g8-lSX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="H9z-OH-IUW"/>
+                    <constraint firstAttribute="trailing" secondItem="AMD-g8-lSX" secondAttribute="trailing" id="bFR-6z-EVY"/>
+                    <constraint firstAttribute="bottom" secondItem="AMD-g8-lSX" secondAttribute="bottom" id="geA-Yw-oFw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="scrollView" destination="AMD-g8-lSX" id="Qcb-D7-oSs"/>
+            </connections>
+            <point key="canvasLocation" x="276.5" y="347"/>
+        </tableViewCell>
+    </objects>
+</document>
