@@ -12,5 +12,6 @@ import UIKit
 //食材首页推荐的数据类型
 public enum WidgetType:Int{
     case GuessYouLike = 1  //猜你喜欢
-    case RedPacket = 2     //滚动视图
+    case RedPacket = 2     //红包入口
+    case NewProduct = 5    //今日新品
 }

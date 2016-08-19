@@ -70,6 +70,9 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             }else if listModel?.widget_type?.integerValue == WidgetType.RedPacket.rawValue{
                  //红包入口
                 rowNum = 1
+            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
+                //今日新品
+                rowNum = 1
             }
             
         
@@ -93,6 +96,9 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             }else if listModel?.widget_type?.integerValue == WidgetType.RedPacket.rawValue{
                 //红包入口
                 height = 100
+            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
+                //今日新品
+                height = 300
             }
 
         }
@@ -120,6 +126,9 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             }else if listModel?.widget_type?.integerValue == WidgetType.RedPacket.rawValue{
                 //红包入口
                 cell = CBRedPacketCell.createRedPackageCellFor(tableView, atIndexPath: indexPath, withlistModel: listModel!)
+            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
+                //今日新品
+                cell = CBRecommendNewCell.createNewCellFor(tableView, atIndexPath: indexPath, withlistModel: listModel!)
             }
             
              return cell
@@ -135,6 +144,12 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             if listModel?.widget_type?.integerValue == WidgetType.GuessYouLike.rawValue{
                 //猜你喜欢
                 headView = CBSearchHeaderView.init(frame: CGRectMake(0,0,kSreenWith,44))
+            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
+                //今日新品
+
+               let  headView1 = CBHeadView.init(frame: CGRectMake(0,0,kSreenWith,44))
+                headView1.configTitle((listModel?.title!)!)
+                headView = headView1
             }
         }
         
@@ -144,9 +159,13 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         var height:CGFloat = 0.0
         if section > 0 {
+            //其他情况
             let listModel = model?.data?.widgetList![section-1]
             if listModel?.widget_type?.integerValue == WidgetType.GuessYouLike.rawValue{
                 //猜你喜欢
+                height = 44
+            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
+                //今日新品
                 height = 44
             }
         }
