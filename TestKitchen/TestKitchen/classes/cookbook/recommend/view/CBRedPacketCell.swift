@@ -22,6 +22,10 @@ class CBRedPacketCell: UITableViewCell {
     }
     
     func showData(){
+        for sub in scrollView.subviews{
+            sub.removeFromSuperview()
+        }
+        
         //1.容器视图
         let container = UIView.createView()
         scrollView.addSubview(container)

@@ -11,6 +11,9 @@ import UIKit
 class CBRecommendView: UIView{
     //表格
     private var tbView:UITableView?
+    
+    
+   
     //显示数据
     var model:CBRecommendModel?{
         didSet{
@@ -73,6 +76,16 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
                 //今日新品
                 rowNum = 1
+            }else if listModel?.widget_type?.integerValue == WidgetType.Special.rawValue{
+                rowNum = 1
+            }else if listModel?.widget_type?.integerValue ==
+                WidgetType.Scene.rawValue{
+                //全部场景
+                rowNum = 1
+            }else if listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
+                rowNum = (listModel?.widget_data?.count)!/4
+            }else if listModel?.widget_type?.integerValue == WidgetType.Work.rawValue{
+                rowNum = 1
             }
             
         
@@ -99,6 +112,15 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
                 //今日新品
                 height = 300
+            }else if listModel?.widget_type?.integerValue == WidgetType.Special.rawValue{
+                height = 200
+            }else if listModel?.widget_type?.integerValue ==
+                WidgetType.Scene.rawValue{
+                //全部场景
+                height = 60
+            }else if listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
+                //推荐达人
+                height = 80
             }
 
         }
@@ -129,6 +151,16 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
                 //今日新品
                 cell = CBRecommendNewCell.createNewCellFor(tableView, atIndexPath: indexPath, withlistModel: listModel!)
+            }else if listModel?.widget_type?.integerValue == WidgetType.Special.rawValue{
+                //早餐日记
+                cell = CBSpecialCell.createSpecialCellFor(tableView, atIndexPath: indexPath, withlistModel: listModel!)
+            }else if listModel?.widget_type?.integerValue ==
+                WidgetType.Scene.rawValue{
+                //全部场景
+                cell = CBSceneCell.createSceneCellFor(tableView, atIndexPath: indexPath, withlistModel: listModel!)
+            }else if listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
+                //推荐达人
+                cell = CBTalentCell.CBTalentCellFor(tableView, atIndexPath: indexPath, withlistModel: listModel!)
             }
             
              return cell
@@ -150,6 +182,18 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
                let  headView1 = CBHeadView.init(frame: CGRectMake(0,0,kSreenWith,44))
                 headView1.configTitle((listModel?.title!)!)
                 headView = headView1
+            }else if listModel?.widget_type?.integerValue == WidgetType.Special.rawValue{
+                //早餐日记 健康100岁
+                
+                let  headView1 = CBHeadView.init(frame: CGRectMake(0,0,kSreenWith,44))
+                headView1.configTitle((listModel?.title!)!)
+                headView = headView1
+            }else if listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
+                //推荐达人
+                
+                let  headView1 = CBHeadView.init(frame: CGRectMake(0,0,kSreenWith,44))
+                headView1.configTitle((listModel?.title!)!)
+                headView = headView1
             }
         }
         
@@ -166,6 +210,12 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
                 height = 44
             }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
                 //今日新品
+                height = 44
+            }else if listModel?.widget_type?.integerValue == WidgetType.Special.rawValue{
+                //今日新品
+                height = 44
+            }else if listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
+                //推荐达人
                 height = 44
             }
         }

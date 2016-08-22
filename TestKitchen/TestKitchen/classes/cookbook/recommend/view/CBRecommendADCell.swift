@@ -27,6 +27,10 @@ class CBRecommendADCell: UITableViewCell {
     }
     
     func showData(){
+        //删除之前的子视图
+        for sub in scrollView.subviews{
+            sub.removeFromSuperview()
+        }
         let cnt = bannerArray?.count
         if cnt>0{
             //滚动视图添加一个容器

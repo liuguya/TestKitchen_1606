@@ -43,6 +43,12 @@
 		DD1251E41D62BA0400159994 /* shop_select@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD1251CC1D62BA0400159994 /* shop_select@3x.png */; };
 		DD1251E61D62BD7C00159994 /* KTCDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1251E51D62BD7C00159994 /* KTCDownloader.swift */; };
 		DD1251ED1D62C65500159994 /* CBRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1251EC1D62C65500159994 /* CBRecommendModel.swift */; };
+		DD2A703E1D6A9056008940EF /* CBSceneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2A703C1D6A9056008940EF /* CBSceneCell.swift */; };
+		DD2A703F1D6A9056008940EF /* CBSceneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2A703D1D6A9056008940EF /* CBSceneCell.xib */; };
+		DD2A70421D6A9771008940EF /* CBTalentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2A70401D6A9771008940EF /* CBTalentCell.swift */; };
+		DD2A70431D6A9771008940EF /* CBTalentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2A70411D6A9771008940EF /* CBTalentCell.xib */; };
+		DD2A70461D6AA61A008940EF /* CBWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2A70441D6AA61A008940EF /* CBWorkCell.swift */; };
+		DD2A70471D6AA61A008940EF /* CBWorkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2A70451D6AA61A008940EF /* CBWorkCell.xib */; };
 		DD43CD671D61732200F68554 /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43CD661D61732200F68554 /* UIView+Util.swift */; };
 		DD43CD691D6173C900F68554 /* UILabel+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43CD681D6173C900F68554 /* UILabel+Util.swift */; };
 		DD43CD6B1D61751F00F68554 /* UIButton+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43CD6A1D61751F00F68554 /* UIButton+Util.swift */; };
@@ -150,6 +156,12 @@
 		DD1251CC1D62BA0400159994 /* shop_select@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop_select@3x.png"; sourceTree = "<group>"; };
 		DD1251E51D62BD7C00159994 /* KTCDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTCDownloader.swift; sourceTree = "<group>"; };
 		DD1251EC1D62C65500159994 /* CBRecommendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRecommendModel.swift; sourceTree = "<group>"; };
+		DD2A703C1D6A9056008940EF /* CBSceneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBSceneCell.swift; sourceTree = "<group>"; };
+		DD2A703D1D6A9056008940EF /* CBSceneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBSceneCell.xib; sourceTree = "<group>"; };
+		DD2A70401D6A9771008940EF /* CBTalentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBTalentCell.swift; sourceTree = "<group>"; };
+		DD2A70411D6A9771008940EF /* CBTalentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBTalentCell.xib; sourceTree = "<group>"; };
+		DD2A70441D6AA61A008940EF /* CBWorkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBWorkCell.swift; sourceTree = "<group>"; };
+		DD2A70451D6AA61A008940EF /* CBWorkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBWorkCell.xib; sourceTree = "<group>"; };
 		DD43CD661D61732200F68554 /* UIView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
 		DD43CD681D6173C900F68554 /* UILabel+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Util.swift"; sourceTree = "<group>"; };
 		DD43CD6A1D61751F00F68554 /* UIButton+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Util.swift"; sourceTree = "<group>"; };
@@ -330,6 +342,12 @@
 				DDCD3AC81D66AAF700749E45 /* CBHeadView.swift */,
 				DDCD3ACC1D66B15D00749E45 /* CBSpecialCell.swift */,
 				DDCD3ACD1D66B15D00749E45 /* CBSpecialCell.xib */,
+				DD2A703C1D6A9056008940EF /* CBSceneCell.swift */,
+				DD2A703D1D6A9056008940EF /* CBSceneCell.xib */,
+				DD2A70401D6A9771008940EF /* CBTalentCell.swift */,
+				DD2A70411D6A9771008940EF /* CBTalentCell.xib */,
+				DD2A70441D6AA61A008940EF /* CBWorkCell.swift */,
+				DD2A70451D6AA61A008940EF /* CBWorkCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -818,6 +836,7 @@
 				DD1251D41D62BA0400159994 /* home_select@3x.png in Resources */,
 				DDFEB2AD1D6563130082B0E6 /* CBRedPacketCell.xib in Resources */,
 				DDA344641D61564800F37F4B /* LaunchImage-800-Landscape-736h@3x.png in Resources */,
+				DD2A70471D6AA61A008940EF /* CBWorkCell.xib in Resources */,
 				DDA344621D61564800F37F4B /* LaunchImage-700@2x.png in Resources */,
 				DD1251DC1D62BA0400159994 /* report_select@3x.png in Resources */,
 				DD1251DE1D62BA0400159994 /* shike_normal@3x.png in Resources */,
@@ -840,6 +859,7 @@
 				DD1251AF1D62B9BE00159994 /* navBtn_bag.png in Resources */,
 				DDCD3AC11D66943D00749E45 /* CBRecommendNewCell.xib in Resources */,
 				DDA344611D61564800F37F4B /* LaunchImage-700-568h@2x.png in Resources */,
+				DD2A70431D6A9771008940EF /* CBTalentCell.xib in Resources */,
 				DD1251B11D62B9BE00159994 /* saoyisao@3x.png in Resources */,
 				DDFEB2A91D6561CE0082B0E6 /* search1.png in Resources */,
 				DDCD3ACB1D66ADDA00749E45 /* more_icon.png in Resources */,
@@ -848,6 +868,7 @@
 				DD1251D81D62BA0400159994 /* mine_select@3x.png in Resources */,
 				DD1251D61D62BA0400159994 /* mine_normal@3x.png in Resources */,
 				DD1251D91D62BA0400159994 /* report_normal@2x.png in Resources */,
+				DD2A703F1D6A9056008940EF /* CBSceneCell.xib in Resources */,
 				DDA3444E1D6154CF00F37F4B /* AppIcon60x60@2x.png in Resources */,
 				DDA3444F1D6154CF00F37F4B /* AppIcon60x60@3x.png in Resources */,
 				DDCD3ACF1D66B15D00749E45 /* CBSpecialCell.xib in Resources */,
@@ -939,6 +960,7 @@
 				DDA343FB1D6151B300F37F4B /* ViewController.swift in Sources */,
 				DDCD3AC01D66943D00749E45 /* CBRecommendNewCell.swift in Sources */,
 				DDA344691D615ABC00F37F4B /* BaseViewController.swift in Sources */,
+				DD2A70461D6AA61A008940EF /* CBWorkCell.swift in Sources */,
 				DDFEB2A71D655ADD0082B0E6 /* CBSearchHeaderView.swift in Sources */,
 				DDA3446D1D615B4300F37F4B /* CommunityViewController.swift in Sources */,
 				DDF942631D6407FD00EFA3E2 /* UIImageView+Utill.swift in Sources */,
@@ -953,7 +975,9 @@
 				DD43CD671D61732200F68554 /* UIView+Util.swift in Sources */,
 				DDA344731D615B8300F37F4B /* ProfileViewController.swift in Sources */,
 				DDA344671D615A6F00F37F4B /* MainTabBarController.swift in Sources */,
+				DD2A703E1D6A9056008940EF /* CBSceneCell.swift in Sources */,
 				DDF9425D1D63FBA400EFA3E2 /* CBRecommendView.swift in Sources */,
+				DD2A70421D6A9771008940EF /* CBTalentCell.swift in Sources */,
 				DDA3446B1D615B0500F37F4B /* CookbookViewController.swift in Sources */,
 				DD1251E61D62BD7C00159994 /* KTCDownloader.swift in Sources */,
 				DD43CD691D6173C900F68554 /* UILabel+Util.swift in Sources */,
