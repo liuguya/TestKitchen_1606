@@ -8,12 +8,11 @@
 
 import UIKit
 
-class CBWorkCell: UITableViewCell {
+class CBWorksCell: UITableViewCell {
 
     @IBAction func clickBtn(sender: UIButton) {
     }
-    
-    
+
     @IBAction func clickUserBtn(sender: UIButton) {
     }
     
@@ -98,13 +97,13 @@ class CBWorkCell: UITableViewCell {
     
     
     //创建cell方法
-    class func createWorkCellFor(tableView:UITableView,atIndexPath indexPath:NSIndexPath,withlistModel listModel:CBRecommendWidgetListModel) -> CBWorkCell{
+    class func createWorkCellFor(tableView:UITableView,atIndexPath indexPath:NSIndexPath,withlistModel listModel:CBRecommendWidgetListModel) -> CBWorksCell{
         //滚动视图
         let cellId = "WorkCellId"
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? CBWorkCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? CBWorksCell
         
         if cell == nil {
-            cell = NSBundle.mainBundle().loadNibNamed("CBWorkCell", owner: nil, options: nil).last as? CBWorkCell
+            cell = NSBundle.mainBundle().loadNibNamed("CBWorkCell", owner: nil, options: nil).last as? CBWorksCell
         }
         cell?.model = listModel
         return cell!
