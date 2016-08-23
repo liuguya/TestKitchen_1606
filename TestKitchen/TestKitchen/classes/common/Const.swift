@@ -195,7 +195,7 @@ public let kHostUrl = "http://api.izhangchu.com/?appVersion=4.5&sysVersion=9.3.2
 
 //http://h5.izhangchu.com/topic_view/index.html?&topic_id=134&user_id=1386387&token=8ABD36C80D1639D9E81130766BE642B7&app_exitpage=
 
-
+//食材
 //methodName=MaterialSubtype&token=&user_id=&version=4.32
 
 //详情

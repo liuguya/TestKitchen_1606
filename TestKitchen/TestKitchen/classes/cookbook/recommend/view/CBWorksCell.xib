@@ -19,7 +19,7 @@
                             <constraint firstAttribute="height" constant="120" id="zAc-vP-bnI"/>
                         </constraints>
                         <connections>
-                            <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PpU-rV-CGd"/>
+                            <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BgM-T7-16k"/>
                         </connections>
                     </button>
                     <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9m4-PZ-xwp" userLabel="secondBtn">
@@ -28,7 +28,7 @@
                             <constraint firstAttribute="height" constant="120" id="sf0-fq-iO0"/>
                         </constraints>
                         <connections>
-                            <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ogp-hw-S59"/>
+                            <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LqW-t9-OMt"/>
                         </connections>
                     </button>
                     <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-Ye-Qzu" userLabel="thirdBtn">
@@ -37,7 +37,7 @@
                             <constraint firstAttribute="height" constant="120" id="DnM-V6-cYa"/>
                         </constraints>
                         <connections>
-                            <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BX8-NA-jcL"/>
+                            <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NIe-bp-thR"/>
                         </connections>
                     </button>
                     <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTB-wU-LK4" userLabel="firstUserBtn">
@@ -47,7 +47,7 @@
                             <constraint firstAttribute="width" constant="40" id="noM-mb-O3w"/>
                         </constraints>
                         <connections>
-                            <action selector="clickUserBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uk7-7B-jJ6"/>
+                            <action selector="clickUserBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wyh-c1-xmd"/>
                         </connections>
                     </button>
                     <button opaque="NO" tag="201" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uK3-d1-MBB" userLabel="secondUserBtn">
@@ -57,7 +57,7 @@
                             <constraint firstAttribute="width" constant="40" id="UPN-Qd-mjW"/>
                         </constraints>
                         <connections>
-                            <action selector="clickUserBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="04U-4y-aG7"/>
+                            <action selector="clickUserBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="asX-Iv-RAQ"/>
                         </connections>
                     </button>
                     <button opaque="NO" tag="202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXi-Ok-v87" userLabel="thirdUserBtn">
@@ -67,7 +67,7 @@
                             <constraint firstAttribute="width" constant="40" id="Wti-8g-rte"/>
                         </constraints>
                         <connections>
-                            <action selector="clickUserBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uet-fg-pc4"/>
+                            <action selector="clickUserBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Qa3-A8-vHe"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gW-Lr-Olh" userLabel="firstLabel">
@@ -76,7 +76,7 @@
                             <constraint firstAttribute="height" constant="30" id="y6X-GY-Rbf"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" tag="301" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzO-WL-18e" userLabel="secondLabel">
@@ -85,7 +85,7 @@
                             <constraint firstAttribute="height" constant="30" id="oZO-Yb-jyb"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" tag="302" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxV-V2-aVO" userLabel="thirdLabel">
@@ -94,7 +94,7 @@
                             <constraint firstAttribute="height" constant="30" id="jhI-PO-X1X"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" tag="400" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYk-c9-9fI" userLabel="descLabel">

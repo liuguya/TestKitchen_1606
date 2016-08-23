@@ -18,6 +18,8 @@ public enum WidgetType:Int{
     case Scene = 9
     case Talent = 4        //推荐达人
     
-    case Work = 8 
+    case Works = 8          //精选作品
+    
+    case Subject = 7        //专题
     
 }

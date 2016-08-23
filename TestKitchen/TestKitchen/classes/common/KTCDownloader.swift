@@ -15,15 +15,26 @@ protocol KTCDownloaderDelegate:NSObjectProtocol{
 
 public enum KTCDownloaderType: Int {
   case Default = 10
+  case Recommend            //食材首页推荐
+  case FoodMaterial         //首页食材
+  case Category             //分类
     
 }
 class KTCDownloader: NSObject {
    
+
+    
+    
     weak var delegate:KTCDownloaderDelegate?
     //类型
-    var type:KTCDownloaderType = .Default
+    var type:KTCDownloaderType? = .Default
     func postWithUrl(urlString:String,params:Dictionary<String,String>?){
-        Alamofire.request(.POST, urlString, parameters: params, encoding: ParameterEncoding.URL, headers: nil).responseData { (response) in
+        
+        var newParams = params
+        newParams!["token"] = ""
+        newParams!["user_id"] = ""
+        newParams!["version"] = "4.5"
+        Alamofire.request(.POST, urlString, parameters: newParams, encoding: ParameterEncoding.URL, headers: nil).responseData { (response) in
             switch response.result{
             case .Failure(let error):
                 self.delegate?.downloder(self, didFailWithError: error)
