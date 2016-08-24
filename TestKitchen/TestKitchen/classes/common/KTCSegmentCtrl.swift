@@ -8,12 +8,30 @@
 
 import UIKit
 
+protocol KTCSegmentCtrlDelegate:NSObjectProtocol {
+    func didSelectSegCtrl(segCtrl:KTCSegmentCtrl,aIndex index:Int)
+}
+
 class KTCSegmentCtrl: UIView {
     //重新实现初始化方法
     /**
      titleNames 显示文字的数组
      */
-    var selectIndex:Int = 0
+    var selectIndex:Int = 0{
+        didSet{
+            if selectIndex != oldValue{
+                selecBtnAtIndex(selectIndex, lastIndex: oldValue)
+            }
+            
+        }
+    
+    }
+    //下划线视图
+    private var lineView:UIView?
+    
+    //代理属性
+   weak var delegate:KTCSegmentCtrlDelegate?
+    
      init(frame: CGRect,titleNames: [String]) {
         super.init(frame: frame)
         if titleNames.count>0{
@@ -35,6 +53,11 @@ class KTCSegmentCtrl: UIView {
                 
                 addSubview(btn)
             }
+            
+            lineView = UIView.createView()
+            lineView?.backgroundColor = UIColor.orangeColor()
+            lineView?.frame = CGRectMake(0,bounds.size.height-2, w, 2)
+            addSubview(lineView!)
         
         }
         
@@ -43,23 +66,44 @@ class KTCSegmentCtrl: UIView {
     func clickBtn(btn:KTCSegmenrBtn){
         
         if btn.tag != 300+selectIndex{
-        
-            //选中当前点击的按钮
-            btn.clicked = true
             
+            //1.修改UI
+            selectIndex = btn.tag - 300
+            
+            //2其他操作
+            delegate?.didSelectSegCtrl(self, aIndex: selectIndex)
+           
+        }
+        
+      
+    }
+    
+    /**
+     
+     index 是当前选中的序号
+     lastIndex是上次选中的序号
+     */
+    func selecBtnAtIndex(index:Int,lastIndex:Int){
+        
+            
+            //选中当前点击的按钮
+            let curBtn = viewWithTag(300+index)
+        if curBtn?.isKindOfClass(KTCSegmenrBtn.self) == true{
+            let btn = curBtn as! KTCSegmenrBtn
+            btn.clicked = true
+        }
+        
             //取消上次选中的按钮
-            let lasBtn = viewWithTag(300+selectIndex)
+            let lasBtn = viewWithTag(300+lastIndex)
             if lasBtn?.isKindOfClass(KTCSegmenrBtn.self) == true{
                 let lastSegBtn = lasBtn as! KTCSegmenrBtn
                 lastSegBtn.clicked = false
+                
             }
-            selectIndex = btn.tag - 300
+        
             
-        }
-        
-        
-        
-        
+            lineView?.frame.origin.x = (lineView?.bounds.size.width)! * CGFloat(index)
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -80,7 +124,7 @@ class KTCSegmenrBtn:UIControl{
             
             }else{
                 //取消选中
-            label?.textColor = UIColor.grayColor()
+                label?.textColor = UIColor.grayColor()
             }
         }
     }
