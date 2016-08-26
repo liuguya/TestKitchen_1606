@@ -43,7 +43,7 @@ class BaseViewController: UIViewController {
     }
     
     func addNavBackBtn(){
-        addNavBtn("", target: self, action: #selector(backAction), isLeft: true)
+        addNavBtn("nav_back_black", target: self, action: #selector(backAction), isLeft: true)
     }
     func backAction(){
         navigationController?.popViewControllerAnimated(true)

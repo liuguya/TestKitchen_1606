@@ -14,7 +14,8 @@ class CBRecommendADCell: UITableViewCell {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
-    
+    //图片点击事件
+    var clickClosure:CBCellClosure?
     
     //属性
     
@@ -56,6 +57,10 @@ class CBRecommendADCell: UITableViewCell {
                 let image = UIImage(named: "sdefaultImage.png")
                 tmpImageView.kf_setImageWithURL(url, placeholderImage: image, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
                 containerView.addSubview(tmpImageView)
+                
+                
+                
+                
                 //添加约束
                 tmpImageView.snp_makeConstraints(closure: { (make) in
                     make.top.bottom.equalTo(containerView)
@@ -69,6 +74,14 @@ class CBRecommendADCell: UITableViewCell {
                     }
                     lastView = tmpImageView
                 })
+                
+                
+                //添加手势
+                tmpImageView.tag = 500+i
+                tmpImageView.userInteractionEnabled = true
+                
+                let g = UITapGestureRecognizer(target: self, action: #selector(tapImage(_:)))
+                tmpImageView.addGestureRecognizer(g)
                 
                 
                
@@ -89,7 +102,24 @@ class CBRecommendADCell: UITableViewCell {
         
     }
     
-    class func createAdCellForTbView(tableView:UITableView,atIndexPath indexPath:NSIndexPath,withModel model:CBRecommendModel) -> CBRecommendADCell {
+    //手势
+    func tapImage(g:UITapGestureRecognizer){
+        let index = (g.view?.tag)! - 500
+        
+        let imageModel = bannerArray![index]
+        //print("11")
+        //要将点击事件传到到视图控制器
+        self.clickClosure!(nil,imageModel.banner_link!)
+    }
+    
+    
+    /**
+     tableView:cell所在的表格
+     indexPath:cell在表格的位置
+     model:cell显示的数据
+     cellClosure:图片点击事件
+     */
+    class func createAdCellForTbView(tableView:UITableView,atIndexPath indexPath:NSIndexPath,withModel model:CBRecommendModel,cellClosure:CBCellClosure?) -> CBRecommendADCell {
         
         let cellId = "recommendADCellId"
         var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? CBRecommendADCell
@@ -97,6 +127,8 @@ class CBRecommendADCell: UITableViewCell {
             cell = NSBundle.mainBundle().loadNibNamed("CBRecommendADCell", owner: nil, options: nil).last as? CBRecommendADCell
         }
         cell?.bannerArray = model.data?.banner
+
+        cell!.clickClosure = cellClosure
         return cell!
     }
     

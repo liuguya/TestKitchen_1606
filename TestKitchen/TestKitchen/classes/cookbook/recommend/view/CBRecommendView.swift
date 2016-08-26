@@ -11,8 +11,8 @@ import UIKit
 class CBRecommendView: UIView{
     //表格
     private var tbView:UITableView?
-    
-    
+    //点击事件
+    var clickClosure:CBCellClosure?
    
     //显示数据
     var model:CBRecommendModel?{
@@ -42,6 +42,9 @@ class CBRecommendView: UIView{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+   
 
 }
 
@@ -95,6 +98,7 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             
         
         }
+        
         return rowNum
     }
     
@@ -146,7 +150,8 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
         if indexPath.section == 0{
             //广告
             if model?.data?.banner?.count > 0{
-                cell = CBRecommendADCell.createAdCellForTbView(tableView, atIndexPath: indexPath, withModel: model!)
+                cell = CBRecommendADCell.createAdCellForTbView(tableView, atIndexPath: indexPath, withModel: model!, cellClosure: clickClosure)
+                
             }
             
             return cell
@@ -156,6 +161,9 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             if listModel?.widget_type?.integerValue == WidgetType.GuessYouLike.rawValue{
                 //猜你喜欢
                 cell = CBRecommendLikeCell.createLikeCellFor(tableView, atIndexPath: indexPath, withlistModel: listModel!)
+                
+                
+                
             }else if listModel?.widget_type?.integerValue == WidgetType.RedPacket.rawValue{
                 //红包入口
                 cell = CBRedPacketCell.createRedPackageCellFor(tableView, atIndexPath: indexPath, withlistModel: listModel!)
@@ -180,6 +188,7 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
                 cell = CBSubjectCell.CBSubjectCellFor(tableView, atIndexPath: indexPath, withListModel: listModel!)
             }
             
+        
              return cell
             
         }

@@ -35,9 +35,26 @@ class CookbookViewController: BaseViewController {
         
         //下载食材数据
         downloadFoodData()
+        
+        //下载分类
+        downloadCategoryData()
     }
     
-    
+    //下载分类的数据
+    func downloadCategoryData() {
+        
+        //参数
+        let params = ["methodName":"CategoryIndex"]
+        
+        let downloader = KTCDownloader()
+        downloader.delegate = self
+        downloader.type = .Category
+        
+        downloader.postWithUrl(kHostUrl, params: params)
+        
+        
+    }
+
     
     //创建导航
     func createMyNav(){
@@ -114,7 +131,7 @@ class CookbookViewController: BaseViewController {
             //make.edges.equalTo(containerView)
         })
         
-        //3.2推荐
+        //3.2食材
         foodView = CBMaterialView()
         foodView?.backgroundColor = UIColor.redColor()
         containerView.addSubview(foodView!)
@@ -125,7 +142,7 @@ class CookbookViewController: BaseViewController {
             make.left.equalTo((recommendView?.snp_right)!)
         })
         
-        //3.3食材
+        //3.3分类
         
         categoryView = CBMaterialView()
         categoryView?.backgroundColor = UIColor.grayColor()
@@ -171,6 +188,7 @@ class CookbookViewController: BaseViewController {
         downloader.postWithUrl(kHostUrl, params: dict)
     
     }
+
     
     
     
@@ -180,7 +198,36 @@ class CookbookViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func gotoFoodCoursePage(link:String){
+        let str:NSString = link
+        let array:NSArray = str.componentsSeparatedByString("#")
+        let id = array[1] as! String
+        let foodCourseCtrl = FoodCourseViewController()
+        foodCourseCtrl.serialId = id
+        navigationController?.pushViewController(foodCourseCtrl, animated: true)
+    }
+    
+    //显示首页推荐的数据
+    func showRecommendData(model:CBRecommendModel){
+        recommendView?.model = model
+        
+        //点击事件
+        recommendView?.clickClosure = {
+            [weak self]
+            (title:String?,link:String) in
+            if link.hasPrefix("app://food_course_series") == true{
+                //食材课程分集显示
+                
+                
+                self!.gotoFoodCoursePage(link)
+            }
+        }
+    }
+    
+    
+    
+    
+    
 
 }
 //MARK:KTCDownloader代理
@@ -198,7 +245,9 @@ extension CookbookViewController:KTCDownloaderDelegate{
                 //显示数据
                 dispatch_async(dispatch_get_main_queue(), {
                     [weak self] in
-                    self!.recommendView?.model = model
+                    //self!.recommendView?.model = model
+                    
+                    self!.showRecommendData(model)
                     })
             }
             
@@ -219,7 +268,14 @@ extension CookbookViewController:KTCDownloaderDelegate{
             
         }else if downloader.type == .Category{
         
-        
+            if let jsonData = data{
+                let model = CBMaterialModel.parseModelWithData(jsonData)
+                //显示数据
+                dispatch_async(dispatch_get_main_queue(), {
+                    [weak self] in
+                    self!.categoryView?.model = model
+                    })
+            }
         }
         
         
